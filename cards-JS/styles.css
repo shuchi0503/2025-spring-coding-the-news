@@ -8,5 +8,19 @@
     /* to make them side by side */
     float: left;
     height: 320px;
+}
 
-
+#explainer{
+    border: 3px solid;
+    background-color: lightblue;
+     width: 15%;
+     padding: 15px;
+     padding-top: 0%;
+     margin: 20px 16px 20px 16px;
+     /* to make them side by side */
+     float: left;
+     height: 320px;
+}
+body{
+    background-color: bisque;
+}
