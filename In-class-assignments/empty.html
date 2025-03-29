@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Basics</title>
+    <style>
+        *:not(code) {
+            font-family: sans-serif;
+        }
+
+        table {
+            gap: 0;
+        }
+
+        /* Table header styling */
+        th {
+            border-bottom: 2px solid black;
+            text-align: left;
+            vertical-align: bottom;
+        }
+
+        td, th {
+            padding: 0.75em;
+            gap: 0;
+        }
+
+        .filter-dropdown {
+            margin-bottom: 20px;
+        }
+
+        .filter-dropdown select {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Class 9: Create a dropdown that filters between democrat and republican data</h1>
+    <h2>Goal: Using Javascript events, have a user select an option to filter data. </h2>
+    <h3>Things to keep in mind</h3>
+    <ul>
+        <li>Look at the syntax for the <code>select/option</code> elements. This is a good resource: <a href="https://www.w3schools.com/tags/tag_select.asp">W3 Schools</a></li>
+        <li>Pay attention to the the option values -- Democrats has a value for <code>repData</code> and Republcians has one called <code>demData</code>. I did this on purpose so it's easier to filter </li>
+    </ul>
+
+    <select id="filterDropdown">
+        <option value="all">Show All</option>
+        <option value="repData">Democrats</option>
+        <option value="demData">Republicans</option>
+    </select>
+
+    <!-- Select the table below!-->
+    <table id="table">
+        <thead id="table_head">
+            <tr>
+                <th>Borough</th>
+                <th data-party="repData">2024 Trump votes</th>
+                <th data-party="demData">2024 Harris votes</th>
+                <th data-party="demData">Democrat vote change from 2020</th>
+                <th data-party="repData">Republican vote change from 2020</th>
+                <th data-party="demData">Harris vote percentage</th>
+                <th data-party="repData">Trump vote percentage</th>
+            </tr>
+        </thead>
+        <tbody id="table_body">
+            <tr>
+                <td>Manhattan</td>
+                <td data-party="repData">113,921</td>
+                <td data-party="demData">533,782</td>
+                <td data-party="demData">169,509</td>
+                <td data-party="repData">29,471</td>
+                <td data-party="demData">82.39%</td>
+                <td data-party="repData">17.61%</td>
+            </tr>
+            <tr>
+                <td>Bronx</td>
+                <td data-party="repData">98,174</td>
+                <td data-party="demData">261,670</td>
+                <td data-party="demData">-56,733</td>
+                <td data-party="repData">42,292</td>
+                <td data-party="demData">72.74%</td>
+                <td data-party="repData">27.26%</td>
+            </tr>
+            <tr>
+                <td>Brooklyn</td>
+                <td data-party="repData">233,964</td>
+                <td data-party="demData">601,265</td>
+                <td data-party="demData">114,131</td>
+                <td data-party="repData">100,311</td>
+                <td data-party="demData">71.97%</td>
+                <td data-party="repData">28.03%</td>
+            </tr>
+            <tr>
+                <td>Queens</td>
+                <td data-party="repData">264,628</td>
+                <td data-party="demData">437,282</td>
+                <td data-party="demData">14,658</td>
+                <td data-party="repData">109,243</td>
+                <td data-party="demData">62.29%</td>
+                <td data-party="repData">37.71%</td>
+            </tr>
+            <tr>
+                <td>Staten Island</td>
+                <td data-party="repData">128,151</td>
+                <td data-party="demData">69,345</td>
+                <td data-party="demData">17,175</td>
+                <td data-party="repData">31,634</td>
+                <td data-party="demData">35.11%</td>
+                <td data-party="repData">64.89%</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // Get the dropdown element
+        let dropdown = document.getElementById('filterDropdown');
+
+        //query select all <td> elements
+        let td = document.querySelectorAll('td')
+
+        //query select all <th> elements
+        let th = document.querySelectorAll('th')
+
+        // Add an event listener when the dropdown changes (the function inside this should include the filter value and the two for each loops below)
+        dropdown.addEventListener('chnage', function(){
+            let filterValue = this.value;
+
+        })
+
+            // Get the selected value in the dropdown
+            // let filterValue = write something here
+
+            // Make a for each loop that goes through each <td> element
+            td.forEach(function(cell) {
+                //if the dropdown value equals the data-party of the cell, set the display to none
+                if cell.getAttribute('data-party') == filterValue)
+                cell.style.display = 'none';
+                  }
+
+                // Otherwise, set each cell's display to table-cell
+                else {
+                    cell.style.display = 'table-cell';
+                }
+            });
+
+            // Make a for each loop that goes through each <th> element
+            th.forEach(function(header) {
+                //if the dropdown value equals the data-party of the cell, set the display to none
+                if (header.getAttribute('data-party') === filterValue) {
+                    header.style.display = 'none'; {
+                } 
+                // Otherwise, set the header's display to table-cell
+                else {
+                    header.style.display = 'table-cell';
+                }
+            });
+            
+
+            
+        
+
+
+    </script>
+</body>
+</html>
