@@ -1,4 +1,3 @@
-index.html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,8 +23,29 @@ index.html
         <p>Traffic density indicated if vehicles are a big contributor of air pollution in the neighborhood. Traffic produces "tailpipe emissions" like PM2.5, NOx and carbon monoxide (CO), and tire wear and braking release additional particulate matter into the air.</p>
     </div>
 
+     <!-- drop-down button -->
+     <div class="dropdown">
+        <button onclick = "myFunction()">Filter</button> 
+
+            <div id="dropdown-content">
+                <input type = "text" placeholder="Search..." id="myInput" onkeyup="filterFunction()">
+            <a href="#" onclick="filterByType('all')">All Neighborhoods</a>
+            <a href="#" onclick="filterByType('borough','Queens')">Queens</a>
+            <a href="#" onclick="filterByType('borough', 'Brooklyn')">Brooklyn</a>
+            <a href="#" onclick="filterByType('borough', 'Bronx')">Bronx</a>
+            <a href="#" onclick="filterByType('borough', 'Manhattan')">Manhattan</a>
+            <a href="#" onclick="filterByType('borough', 'Staten Island')">Staten Island</a>
+            <a href="#" onclick="filterByType('vehicle', 'Cars')">Cars</a>
+            <a href="#" onclick="filterByType('vehicle', 'Trucks')">Trucks</a>
+            <a href="#" onclick="filterByType('vehicle', 'Other')">Other</a>
+            <a href="#" onclick="filterByType('traffic', 'High')">High Traffic</a>
+            <a href="#" onclick="filterByType('traffic', 'Medium')">Medium Traffic</a>
+            <a href="#" onclick="filterByType('traffic', 'Low')">Low Traffic</a>
+            </div>
+    </div>
+
     <div id="ridgewood" class="card">
-        <h2>Ridgewood</h2>
+        <h2 class="neighborhood">Ridgewood</h2>
         <p class="boro">Borough: Queens</p>
         <p class="traffic">Traffic Density: Low</p>
         <p class="zip">Zip Code: 11385</p>
@@ -34,7 +54,7 @@ index.html
     </div> 
 
     <div id="fresh" class="card">
-        <h2>Fresh Meadows</h2>
+        <h2 class="neighborhood">Fresh Meadows</h2>
         <p class="boro">Borough: Queens</p>
         <p class="traffic">Traffic Density: Medium</p>
         <p class="zip">Zip Code: 11366</p>
@@ -43,7 +63,7 @@ index.html
     </div> 
 
     <div id="dumbo" class="card">
-        <h2>DUMBO</h2>
+        <h2 class="neighborhood">DUMBO</h2>
         <p class="boro">Borough: Brooklyn</p>
         <p class="traffic">Traffic Density: High</p>
         <p class="zip">Zip Code: 11201</p>
@@ -52,7 +72,7 @@ index.html
     </div> 
 
     <div id="dumbo" class="card">
-        <h2>Greenpoint</h2>
+        <h2 class="neighborhood">Greenpoint</h2>
         <p class="boro">Borough: Brooklyn</p>
         <p class="traffic">Traffic Density: Low</p>
         <p class="zip">Zip Code: 11222</p>
@@ -60,6 +80,61 @@ index.html
         <p class="vehicle">Most Common Vehicle Types: Trucks, Cars</p>
     </div> 
 
+    <div id="riverdale" class="card">
+        <h2 class="neighborhood">Riverdale-Spuyten Duyvil</h2>
+        <p class="boro">Borough: Bronx</p>
+        <p class="traffic">Traffic Density: Medium</p>
+        <p class="zip">Zip Code: 10463</p>
+        <p class="complaints">No. of Complaints: 1,423</p>
+        <p class="vehicle">Most Common Vehicle Types: Cars</p>
+    </div>
+
+    <div id="highbridge" class="card">
+        <h2 class="neighborhood">Highbridge</h2>
+        <p class="boro">Borough: Bronx</p>
+        <p class="traffic">Traffic Density: High</p>
+        <p class="zip">Zip Code: 10452</p>
+        <p class="complaints">No. of Complaints: 1,165</p>
+        <p class="vehicle">Most Common Vehicle Types: Other</p>
+    </div>
+
+    <div id="hells" class="card">
+        <h2 class="neighborhood">Hell's Kitchen</h2>
+        <p class="boro">Borough: Manhattan</p>
+        <p class="traffic">Traffic Density: High</p>
+        <p class="zip">Zip Code: 10036</p>
+        <p class="complaints">No. of Complaints: 12,020</p>
+        <p class="vehicle">Most Common Vehicle Types: Trucks</p>
+    </div>
+
+    <div id="midtown" class="card">
+        <h2 class="neighborhood">Midtown West</h2>
+        <p class="boro">Borough: Manhattan</p>
+        <p class="traffic">Traffic Density: High</p>
+        <p class="zip">Zip Code: 10019</p>
+        <p class="complaints">No. of Complaints: 5,467</p>
+        <p class="vehicle">Most Common Vehicle Types: Cars</p>
+    </div>
+
+    <div id="newspring" class="card">
+        <h2 class="neighborhood">New Springville</h2>
+        <p class="boro">Borough: Staten Island</p>
+        <p class="traffic">Traffic Density: Low</p>
+        <p class="zip">Zip Code: 10314</p>
+        <p class="complaints">No. of Complaints: 1,031</p>
+        <p class="vehicle">Most Common Vehicle Types: Cars</p>
+    </div>
+
+    <div id="ana" class="card">
+        <h2 class="neighborhood">Annadale-Huguenot-Prince's Bay</h2>
+        <p class="boro">Borough: Staten Island</p>
+        <p class="traffic">Traffic Density: Low</p>
+        <p class="zip">Zip Code: 10312</p>
+        <p class="complaints">No. of Complaints: 701</p>
+        <p class="vehicle">Most Common Vehicle Types: Cars, Trucks</p>
+    </div>
+
+   
 
     <script src="index.js"></script>
 </body>   
