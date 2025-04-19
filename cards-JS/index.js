@@ -1,67 +1,134 @@
-document.getElementById("title").style.color = "red";
 
-// document.getElementById("ridgewood").style.backgroundColor = "yellow";
+// select container, loop through the array, for each thing,
+// create a card, append it to the container
 
-// Select all divs with class card
-const divs = document.querySelectorAll(".card");
+  const container = document.getElementById("container");
 
-// Loop through the 10 divs you want the same properties for
-for (let i = divs.length - 10; i < divs.length; i++){
-    divs[i].style.backgroundColor = "yellow";
-    divs[i].style.borderColor = "red";
-    divs[i].style.borderWidth = "3px";
-    divs[i].style.borderStyle = "solid";
-    // divs[1].style.width = "15%";
-    // divs[1].style.padding = "15px";
-}
-// document.getElementByClassName("card").style.margin = "20px 16px 20px 16px";
+let cards =
+[
+    {
+      "Neighborhood": "Ridgewood",
+      "Borough": "Queens",
+      "Zip Code": 11385,
+      "Traffic Density": "Low",
+      "No. of Complaints": "2,384",
+      "Most Common Vehicle Type": "Cars"
+    },
+    {
+      "Neighborhood": "Fresh Meadows",
+      "Borough": "Queens",
+      "Zip Code": 11366,
+      "Traffic Density": "Medium",
+      "No. of Complaints": "3,082",
+      "Most Common Vehicle Type": "Other"
+    },
+    {
+      "Neighborhood": "DUMBO",
+      "Borough": "Brooklyn",
+      "Zip Code": 11201,
+      "Traffic Density": "High",
+      "No. of Complaints": "2,792",
+      "Most Common Vehicle Type": "Cars"
+    },
+    {
+      "Neighborhood": "Greenpoint",
+      "Borough": "Brooklyn",
+      "Zip Code": 11222,
+      "Traffic Density": "Low",
+      "No. of Complaints": "2,207",
+      "Most Common Vehicle Type": "Trucks, Cars"
+    },
+    {
+      "Neighborhood": "Riverdale-Spuyten Duyvil",
+      "Borough": "Bronx",
+      "Zip Code": 10463,
+      "Traffic Density": "Medium",
+      "No. of Complaints": "1,423",
+      "Most Common Vehicle Type": "Cars"
+    },
+    {
+      "Neighborhood": "Highbridge",
+      "Borough": "Bronx",
+      "Zip Code": 10452,
+      "Traffic Density": "High",
+      "No. of Complaints": "1,165",
+      "Most Common Vehicle Type": "Other"
+    },
+    {
+      "Neighborhood": "Hell's Kitchen",
+      "Borough": "Manhattan",
+      "Zip Code": 10036,
+      "Traffic Density": "High",
+      "No. of Complaints": "12,020",
+      "Most Common Vehicle Type": "Trucks"
+    },
+    {
+      "Neighborhood": "Midtown West",
+      "Borough": "Manhattan",
+      "Zip Code": 10019,
+      "Traffic Density": "High",
+      "No. of Complaints": "5,467",
+      "Most Common Vehicle Type": "Cars"
+    },
+    {
+      "Neighborhood": "New Springville",
+      "Borough": "Staten Island",
+      "Zip Code": 10314,
+      "Traffic Density": "Low",
+      "No. of Complaints": "1,031",
+      "Most Common Vehicle Type": "Cars"
+    },
+    {
+      "Neighborhood": "Annadale-Huguenot-Prince's Bay",
+      "Borough": "Staten Island",
+      "Zip Code": 10312,
+      "Traffic Density": "Low",
+      "No. of Complaints": "701",
+      "Most Common Vehicle Type": "Cars, Trucks"
+    }
+   ]
+
+   cards.forEach(function(card){
+        let neighborhood = document.createElement('div');
+
+        neighborhood.classList.add('card');
+        neighborhood.setAttribute('data-boro',card.Borough);
+
+        neighborhood.innerHTML = `<h2 class="neighborhood">${card.Neighborhood}</h2>
+        <p class="boro">Borough: ${card.Borough}</p>
+        <p class="zip">Zip Code: ${card["Zip Code"]}</p>
+        <p class="traffic">Traffic Density: ${card["Traffic Density"]}</p>
+        <p class="complaints">No. of Complaints: ${card["No. of Complaints"]}</p>
+        <p class="vehicle">Most Common Vehicle Type: ${card["Most Common Vehicle Type"]}</p>`;
+   
+        container.append(neighborhood);
+  });
 
 
-document.getElementById("explainer").style.borderStyle = "dashed";
-document.getElementById("explainer").style.borderWidth = "5px";
-document.getElementById("explainer").style.fontSize = "15pt";
+   const dropdown = document.getElementById("filterDropdown");
 
-// Get the dropdown element
-function myFunction(){
-    document.getElementById("dropdown-content").classList.toggle("show");
+   dropdown.addEventListener("change", function() {
+      const selected = this.value;
+      const cards = document.querySelectorAll(".card");
 
-// Function to filter the items in the dropdown based on user input
-// function filterFunction(){
-    
-//   const input = document.getElementById("myInput");
-//   const filter = input.value.toUpperCase();
-//   const div = document.getElementById("dropdown-content");
-//   const options = dropdown.getElementsByTagName("a");
+      cards.forEach(card => {
+        const boro = card.getAttribute("data-boro");
 
-//   for (let i = 0; i < options.length; i++) {
-//     const txtValue = options[i].textContent || options[i].innerText;
-//     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//         options[i].style.display = "";
-//     } else {
-//         options[i].style.display = "none";
-//     }
-//     }
+        if (selected === "All"|| boro === selected) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+    }
+  });
+});
 
- // Get the dropdown element
- let dropdown = document.getElementById('filterDropdown');
+// changing some styles 
 
-  //query select all card div elements
-  let neighborhoods = document.querySelectorAll('div.card')
-
-  // Add an event listener when the dropdown changes (the function inside this should include the filter value and the two for each loops below)
-  dropdown.addEventListener('change', function(){
-    let filterValue = this.value;
-
-// Make a for each loop that goes through each <h2> element
-neighborhoods.forEach(function(card) {
-    //if the dropdown value equals the neighborhood of the cell, set the display to none
-    let neighborhood = card.getAttribute('neighborhood') 
-
-    if (neighborhood == filterValue) {
-        card.style.display = 'none';
-}
-else {
-    card.style.display = 'block';
-}
-}
-  }
+document.getElementById("filterDropdown").style.marginLeft = "55px";
+document.getElementById("container").style.margin = "40px";
+document.getElementById("title").style.margin = "40px";
+document.getElementById("filterDropdown").style.backgroundColor = "#E8E8E4";
+document.getElementById("filterDropdown").style.borderBlockColor = "#a5a58d";
+document.getElementById("filterDropdown").style.borderWidth = "5px";
+document.getElementById("filterDropdown").style.borderLeftColor = "#a5a58d";
+document.getElementById("filterDropdown").style.borderRightColor = "#a5a58d";
