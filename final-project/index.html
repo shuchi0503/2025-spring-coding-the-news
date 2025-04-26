@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="styles.css" />
+<head>
+    <title>final project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<body>
+
+<h1>How long does it take emergency responders to get to your neighborhood?</h1>
+<h2>Take this quiz to find out</h2>
+
+<p>Which borough do you live in?</p>
+<!-- drop down of boroughs -->
+<select id="boroDropdown">
+    <option value="Select">Select Borough</option>
+    <option value="Queens">Queens</option>
+    <option value="Brooklyn">Brooklyn</option>
+    <option value="Bronx">Bronx</option>
+    <option value="Manhattan">Manhattan</option>
+    <option value="Staten Island">Staten Island</option>
+</select>
+
+<!-- make 5 cards, one will show up depending on which boro is selected from the dropdown -->
+
+<p>Select the type of emergency</p>
+<!-- drop down of emergency types like fire, medical, non-medical etc -->
+<select id="emtypeDropdown">
+    <option value="Select">Select Emergency</option>
+    <option value="FDNY">FDNY</option>
+    <option value="EMS">EMS</option>
+    <option value="Agg">Aggregate</option>
+</select>
+<!-- make 3 cards, one will show up depending on type of emergency selected -->
+
+<script src="index.js"></script>
+</body>
