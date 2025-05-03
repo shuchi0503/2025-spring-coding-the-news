@@ -23,7 +23,31 @@
     <option value="Staten Island">Staten Island</option>
 </select>
 
-<!-- make 5 cards, one will show up depending on which boro is selected from the dropdown -->
+<!-- make 5 cards/paragraphs, one will show up depending on which boro is selected from the dropdown -->
+
+<div id="boro-content">
+    
+    <p id="manhattan-para" class="boro-para" style="display:none">
+    In 2025, from January to March, it took ambulances and fire units in Manhattan an average of 11 minutes to arrive at life threatening medical emergencies.
+    </p>
+
+    <p id="queens-para" class="boro-para" style="display:none">
+        <!-- Add info here -->
+    </p>
+
+    <p id="brooklyn-para" class="boro-para" style="display:none">
+        <!-- Add info here -->
+    </p>
+
+    <p id="bronx-para" class="boro-para" style="display:none">
+        <!-- Add info here -->
+    </p>
+
+    <p id="staten-para" class="boro-para" style="display:none">
+        <!-- Add info here -->
+    </p>
+</div>
+
 
 <p>Select the type of emergency</p>
 <!-- drop down of emergency types like fire, medical, non-medical etc -->
@@ -33,7 +57,20 @@
     <option value="EMS">EMS</option>
     <option value="Agg">Aggregate</option>
 </select>
-<!-- make 3 cards, one will show up depending on type of emergency selected -->
+
+<!-- make 3 cards/paragraphs, one will show up depending on type of emergency selected -->
+
+<div id="emtype-content">
+
+    <p id="fdny-para" class="emtype-para" style="display:none">
+    <!-- Add info here -->
+    </p>
+
+    <p id="ems-para" class="emtype-para" style="display:none">
+        <!-- Add info here -->
+    </p>
+
+</div>
 
 <script src="index.js"></script>
 </body>

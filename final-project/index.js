@@ -1,5 +1,36 @@
-index.js
+document.addEventListener('DOMContentLoaded', function() {
 
+    // calling drop downs
+    const boroDropdown = document.getElementById('boroDropdown');
+    const emtypeDropdown = document.getElementById('emtypeDropdown');
+
+    // calling content divs
+    const boroContentContainer = document.getElementById('boro-content');
+    const emtypeContentContainer = document.getElementById('emtype-content');
+
+    boroDropdown.addEventListener('change', updateBoroContent);
+    emtypeDropdown.addEventListener('change', updateEmtypeContent);
+
+    const boroParas = boroContentContainer.querySelectorAll('.boro-para');
+
+    // if / for loop here?
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// started over above
 let boroCards =
 [
     {
