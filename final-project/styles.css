@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* change font- family to something more formal */
+
 body{
     background-color:#6a040f;
     margin: 5px 20px 5px 20px;
@@ -48,14 +48,15 @@ select {
 
     border: 3px solid;
     background-color: whitesmoke;
-     width: 100%;
+     /* width: 100%; */
      max-width: 1250px;
      padding: 16px; 
      box-sizing: border-box;
      /* display: flex;
      flex-wrap: wrap; */
      gap: 20px;
-     justify-content: left;
+     justify-content: center;
      margin-bottom: 20px;
-     margin: 20px auto;
+     margin-left: 80px;
+     margin-right: 80px;
 }
