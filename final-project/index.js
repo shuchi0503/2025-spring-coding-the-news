@@ -3,6 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const emtypeDropdown = document.getElementById('emtypeDropdown');
     const boroContentContainer = document.getElementById('boro-content');
 
+    const style = document.createElement('style');
+    style.textContent = `
+        .boroCard p {
+            margin-left: 80px;  
+            margin-right: 80px; 
+        }
+    `;
+    document.head.appendChild(style);
+
     const boroCards = [
         {
             boro: "Manhattan",
@@ -120,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
     boroDropdown.addEventListener('change', updateContent);
     emtypeDropdown.addEventListener('change', updateContent);
 });
+
 
 
 
